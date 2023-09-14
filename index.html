@@ -1,148 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katik Persegi</title>
     <link rel="icon" type="image/x-icon" href="img/persegi.jpg" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="flex flex-row bg-white box-shadow-primary">
-      <a href="#">
-        <div id="header"></div>
-      </a>
-      <div class="header align-self-center bg-dark font-white font-size-20 "><h1>KATIK</h1></div>
-      </div>
-    </header>
+    <link rel="stylesheet" href="./css/myCss.css" />
+    <script src="./js/myJs.js"></script>
+</head>
 
-    <main id="mainContainer" class="flex flex-column">
-      <div class="buttonTypeContainer flex flex-row">
-      <h1>KALKULATOR MATEMATIKA PERSEGI </h1>
-      </div>
+<body>
 
-      <!-- Persegi -->
-      <div class="persegiContainer typeContainer flex flex-row justify-between">
-        <div class="flex flex-column bg-white box-shadow-secondary rounded">
-          <div class="title bg-dark rounded-t-lg">
-            <h2
-              class="font-roboto font-white font-bold uppercase align-center font-size-20"
-            >
-              Luas Persegi
-            </h2>
-          </div>
+    <!-- LUAS PERSEGI -->
+    <section class="header" id="header">
 
-          <div class="imgContainer-persegi align-self-center"></div>
+        <h1>LUAS PERSEGI</h1>
 
-          <div class="content">
-            <p class="font-roboto">Rumus Luas Persegi:</p>
-            <div class="rumus">
-              <p class="font-roboto font-bold align-center">L = S x S</p>
-            </div>
-            <p class="font-bold line-height-24">Dimana:</p>
-            <p class="font-roboto line-height-24">L = Luas</p>
-            <p class="font-roboto line-height-24">S = Sisi</p>
-          </div>
+    </section>
 
-          <div class="hitung">
-            <h3 class="font-roboto font-bold">Hitung Luas Persegi</h3>
-            <p class="font-roboto font-bold margin-top-18">Sisi:</p>
-            <input
-              type="number"
-              id="hitungPersegiLuas"
-              name="hitungPersegiLuas"
-              class="font-roboto"
-            />
-          </div>
+    <section class="container-square">
+        <div class="sisi-atas">AB</div>
+        <div class="black-square"></div>
+        <div class="sisi-bawah">DC</div>
+    </section>
 
-          <div id="hasilPersegiLuas" class="hasil"></div>
+    <section class="" id="desc">
 
-          <div class="buttonContainer">
-            <button
-              class="btnHitung font-roboto font-white font-bold font-size-14 uppercase rounded no-border"
-              onclick="getHitung('persegiLuas')"
-            >
-              Hitung
-            </button>
+        <h3>PERSEGI SAMA SISI</h4>
+            <h4>Rumus Luas Persegi yaitu :</h4>
 
-            <button
-              class="btnReset font-roboto font-white font-bold font-size-14 uppercase bg-dark rounded no-border"
-              onclick="resetHasil('persegiLuas')"
-            >
-              Reset
-            </button>
-          </div>
-        </div>
+            <h4 id="rumus">L=SxS</h4>
+            <p>Di mana :
+                <br>L = Luas
+                <br>S = Sisi
+            </p>
 
-        <div class="flex flex-column bg-white box-shadow-secondary rounded">
-          <div class="title bg-dark rounded-t-lg">
-            <h2
-              class="font-roboto font-white font-bold uppercase align-center font-size-20"
-            >
-              Keliling Persegi
-            </h2>
-          </div>
+    </section>
 
-          <div class="imgContainer-persegi align-self-center"></div>
+    <hr>
 
-          <div class="content">
-            <p class="font-roboto">Rumus Keliling Persegi:</p>
-            <div class="rumus">
-              <p class="font-roboto font-bold align-center">K = 4 x S</p>
-            </div>
-            <p class="font-bold line-height-24">Dimana:</p>
-            <p class="font-roboto line-height-24">K = Keliling</p>
-            <p class="font-roboto line-height-24">S = Sisi</p>
-          </div>
+    <section id="hitung">
 
-          <div class="hitung">
-            <h3 class="font-roboto font-bold">Hitung Keliling Persegi</h3>
-            <p class="font-roboto font-bold margin-top-18">Sisi:</p>
-            <input
-              type="number"
-              id="hitungPersegiKeliling"
-              name="hitungPersegiKeliling"
-              class="font-roboto"
-            />
-          </div>
+        <h1>Hitung Luas Persegi</h1>
 
-          <div id="hasilPersegiKeliling" class="hasil"></div>
+        <input type="text" name="" id="panjangLuasSisi">
+        <p id="errorLuas" style="color: red;"></p>
+        <p>L = S x S</p>
+        <p id="luasSisi"></p>
+        <p id="hasilLuas"></p>
 
-          <div class="buttonContainer">
-            <button
-              class="btnHitung font-roboto font-white font-bold font-size-14 uppercase bg-dark rounded no-border"
-              onclick="getHitung('persegiKeliling')"
-            >
-              Hitung
-            </button>
 
-            <button
-              class="btnReset font-roboto font-white font-bold font-size-14 uppercase bg-dark rounded no-border"
-              onclick="resetHasil('persegiKeliling')"
-            >
-              Reset
-            </button>
-          </div>
-        </div>
-      </div>
+    </section>
+
+    <section id="button">
+
+        <input type="button" value="Hitung" onclick="hitungLuas()" class="btn-hitung">
+        <br>
+        <input type="reset" value="Reset" onclick="resetLuas()" class="btn-reset">
+
+
+    </section>
+
+    <!-- KELILING PERSEGI -->
+    <section class="header" id="header">
+
+        <h1>KELILING PERSIGI</h1>
+
+    </section>
+
+    <section class="container-square">
+        <div class="sisi-atas">AB</div>
+        <div class="black-square"></div>
+        <div class="sisi-bawah">DC</div>
+    </section>
+
+    <section class="" id="desc">
+
+        <h3>PERSEGI SAMA SISI</h4>
+            <h4>Rumus Keliling Persegi yaitu :</h4>
+
+            <h4 id="rumus">K=4xS</h4>
+            <p>Di mana :
+                <br>K = Keliling
+                <br>S = Sisi
+            </p>
+
+    </section>
+
+    <hr>
+
+    <section id="hitung">
+
+        <h1>Hitung Keliling Persegi</h1>
+
+        <input type="text" name="" id="panjangKelilingSisi">
+        <p id="errorKeliling" style="color: red;"></p>
+        <p>K = 4 x S</p>
+        <p id="kelilingSisi"></p>
+        <p id="hasilKeliling"></p>
+
+
+    </section>
+
+    <section id="button">
+
+        <input type="button" value="Hitung" onclick="hitungKeliling()" class="btn-hitung">
+        <br>
+        <input type="reset" value="Reset" onclick="resetKeliling()" class="btn-reset">
+
+
+    </section>
 
     
-          </div>
-        </div>
-      </div>
-    </main>
 
-    <footer
-      id="footerContainer"
-      class="flex flex-row justify-center box-shadow-secondary bg-white"
-    >
-      <p class="font-roboto font-bold align-center">
-       RevoU - Mini Coding Project Software Engineering 2023
-       <br>
-       <br> Wawa Wiwaha
-      </p>
-    </footer>
-    <script src="js/script.js"></script>
-  </body>
+    <section class="footer" id="footer">
+        <p>RevoU - Mini Coding Project Software Engineering 2023</p>
+    </section>
+
+
+</body>
+
 </html>
